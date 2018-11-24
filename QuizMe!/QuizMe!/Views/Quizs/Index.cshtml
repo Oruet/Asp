@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QuizMe_.Models.Quiz>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalQuestions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Question)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalQuestions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Quiz }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Quiz }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Quiz })
+        </td>
+    </tr>
+}
+
+</table>
